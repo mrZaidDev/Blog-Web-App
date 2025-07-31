@@ -24,7 +24,7 @@ const Register = () => {
   };
 
   return (
-    <main className="m-auto max-w-[80%] border h-[80vh] mt-20 p-5 flex flex-col gap-10 md:max-w-[500px] rounded-xl">
+    <main className="m-auto max-w-[80%] border h-[65vh] mt-20 p-5 flex flex-col gap-10 md:max-w-[500px] rounded-xl">
       {/* HEADER */}
       <Header text={"Register"}/>
       {/* FORM */}

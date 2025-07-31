@@ -48,7 +48,7 @@ export const LoginController = async (req, res) => {
       sameSite: "Strict",
     });
     // success response
-    return res.status(200).json({ message: "login successful." });
+    return res.status(200).json(existing);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -60,5 +60,14 @@ export const LogoutController = async (req, res) => {
     httpOnly: true,
     secure: false,
   });
-  res.status(200).json({message:"user logged out successfully."})
+  res.status(200).json({ message: "user logged out successfully." });
+};
+
+export const IsAuthenticated = async (req, res) => {
+  try {
+    const foundUser = await userModel.findById(req.user.id);
+    return res.status(200).json(foundUser);
+  } catch (error) {
+    return res.status(500).json({message:"Internal server error!"})
+  }
 };

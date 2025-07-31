@@ -2,8 +2,10 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/authUser";
 
 const Login = () => {
+  const {setUser} = useUser()
   const navigate = useNavigate()
   const [regForm, setRegForm] = useState({
     email: "",
@@ -13,16 +15,17 @@ const Login = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/user/login", regForm, {
+      const res = await axios.post("http://localhost:5000/api/user/login", regForm, {
         withCredentials: true,
       });
+      setUser(res.data)
       navigate('/dashboard')
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <main className="m-auto max-w-[80%] border h-[80vh] mt-20 p-5 flex flex-col gap-10 md:max-w-[500px] rounded-xl">
+    <main className="m-auto max-w-[80%] border h-[65vh] mt-20 p-5 flex flex-col gap-10 md:max-w-[500px] rounded-xl">
       {/* HEADER */}
       <Header text={"Login"} />
       {/* FORM */}

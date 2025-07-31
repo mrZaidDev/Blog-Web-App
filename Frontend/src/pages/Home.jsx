@@ -3,6 +3,7 @@ import axios from "axios";
 import { ClipLoader } from "react-spinners";
 import Header from "../components/Header";
 import PostDesign from "../components/PostDesign";
+
 const Home = () => {
   const [posts, setPosts] = useState(false);
   const [currentPage,setCurrentPage] = useState(1)
