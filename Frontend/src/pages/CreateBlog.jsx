@@ -25,7 +25,7 @@ const CreateBlog = () => {
   };
 
   return (
-    <main className="m-auto max-w-[80%] border h-[80vh] mt-20 p-5 flex flex-col gap-10 md:max-w-[500px] rounded-xl">
+    <main className="m-auto max-w-[80%] border sm:h-[85vh] lg:h-[79vh] mt-20 p-5 flex flex-col gap-10 md:max-w-[500px] rounded-xl">
       {/* HEADER */}
       <Header text={"Create New Blog"} />
       {/* FORM */}
