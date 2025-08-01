@@ -13,7 +13,7 @@ const EditPost = () => {
 // Fetching Single Post
   useEffect(() => {
     const fetchingSinglePost = async () => {
-      const res = await axios.get(`http://localhost:5000/api/posts/${id}`, {
+      const res = await axios.get(`https://blog-web-app-taupe.vercel.app/api/posts/${id}`, {
         withCredentials: true,
       });
       setEditPost({content:res.data.content,title : res.data.title})
@@ -25,7 +25,7 @@ const EditPost = () => {
   const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
-          await axios.put(`http://localhost:5000/api/post/${id}`, editPost, {
+          await axios.put(`https://blog-web-app-taupe.vercel.app/api/post/${id}`, editPost, {
             withCredentials: true,
           });
           navigate('/dashboard')

@@ -9,7 +9,7 @@ const Navbar = () => {
   useEffect(()=>{
     const checkUser = async () => {
      try {
-      const res = await axios.get('http://localhost:5000/api/user/profile',{withCredentials:true})
+      const res = await axios.get('https://blog-web-app-taupe.vercel.app/api/user/profile',{withCredentials:true})
      setUser(res.data)
      } catch (error) {
       console.log(error)

@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchingAllPosts = async () => {
       const res = await axios.get(
-        `http://localhost:5000/api/posts?page=${currentPage}&limit=5`,
+        `https://blog-web-app-taupe.vercel.app/api/posts?page=${currentPage}&limit=5`,
         { withCredentials: true }
       );
       setPosts(res.data);

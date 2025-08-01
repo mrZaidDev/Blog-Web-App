@@ -8,7 +8,7 @@ const ReadMore = () => {
   const [singlePost, setSinglePost] = useState(false);
   useEffect(() => {
     const fetchingSinglePost = async () => {
-      const res = await axios.get(`http://localhost:5000/api/posts/${id}`, {
+      const res = await axios.get(`https://blog-web-app-taupe.vercel.app/api/posts/${id}`, {
         withCredentials: true,
       });
       setSinglePost(res.data);

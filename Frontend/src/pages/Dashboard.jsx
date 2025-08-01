@@ -15,7 +15,7 @@ const Dashboard = () => {
     const fetchingMyPosts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/posts/my-posts`,
+          `https://blog-web-app-taupe.vercel.app/api/posts/my-posts`,
           {
             withCredentials: true,
           }
@@ -30,7 +30,7 @@ const Dashboard = () => {
   //  Deleting Single Post
   const deletePost = async (e) => {
     try {
-      await axios.delete(`http://localhost:5000/api/post/${e._id}`, {
+      await axios.delete(`https://blog-web-app-taupe.vercel.app/api/post/${e._id}`, {
         withCredentials: true,
       });
       const remPosts = myPosts.filter((p) => p._id != e._id);

@@ -15,7 +15,7 @@ const Login = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/user/login", regForm, {
+      const res = await axios.post("https://blog-web-app-taupe.vercel.app/api/user/login", regForm, {
         withCredentials: true,
       });
       setUser(res.data)

@@ -15,7 +15,7 @@ const CreateBlog = () => {
   const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
-          await axios.post(`http://localhost:5000/api/post`, post, {
+          await axios.post(`https://blog-web-app-taupe.vercel.app/api/post`, post, {
             withCredentials: true,
           });
           navigate('/dashboard')
