@@ -8,7 +8,7 @@ import commonPostRouter from "./routes/commonPostRoutes.js";
 import cors from "cors";
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:5173", // Replace with your frontend's origin
+  origin: "https://blog-web-app-nzot.vercel.app/", // Replace with your frontend's origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // If you need to send cookies or authentication headers
   optionsSuccessStatus: 204, // For preflight requests
