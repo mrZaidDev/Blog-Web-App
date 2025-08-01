@@ -16,7 +16,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/posts/:id" element={<ProtectedRoutes><OnePost /></ProtectedRoutes>} />
+        <Route path="/posts/:id" element={<OnePost />} />
         <Route path="/edit/:id" element={<ProtectedRoutes><EditPost /></ProtectedRoutes>} />
         <Route path="/dashboard" element={<ProtectedRoutes><Dashboard /></ProtectedRoutes>} />
         <Route path="/create" element={<ProtectedRoutes><CreateBlog /></ProtectedRoutes>} />
