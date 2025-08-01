@@ -39,7 +39,7 @@ export const LoginController = async (req, res) => {
     // JWT Token Setup
     const token = jwt.sign(
       { id: existing._id, email },
-      process.env.JWT_SECRET_KEY,
+      'zaidkhanchamanwala',
       { expiresIn: "1h" }
     );
     res.cookie("Token", token, {
