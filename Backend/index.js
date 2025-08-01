@@ -20,6 +20,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
+app.get('/',(req,res) => {
+  return res.send("Salam")
+})
 app.use("/api/user", userRouter);
 app.use("/api/post", authenticatingUser, authenticatedPostRoutes);
 app.use("/api/posts", commonPostRouter);
