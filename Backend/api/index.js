@@ -1,12 +1,13 @@
 import express from "express";
-import userRouter from "./routes/userRoutes.js";
-import connectDB from "./config/connectdb.js";
+import userRouter from "../routes/userRoutes.js";
+import connectDB from "../config/connectdb.js";
 import cookieParser from "cookie-parser";
-import authenticatedPostRoutes from "./routes/authenticatedPostRoutes.js";
-import authenticatingUser from "./middlewares/authUser.js";
-import commonPostRouter from "./routes/commonPostRoutes.js";
+import authenticatedPostRoutes from "../routes/authenticatedPostRoutes.js";
+import authenticatingUser from "../middlewares/authUser.js";
+import commonPostRouter from "../routes/commonPostRoutes.js";
 import cors from "cors";
 const app = express();
+
 const corsOptions = {
   origin: "https://blog-web-app-nzot.vercel.app", // Replace with your frontend's origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
