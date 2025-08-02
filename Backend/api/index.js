@@ -6,7 +6,10 @@ import authenticatedPostRoutes from "../routes/authenticatedPostRoutes.js";
 import authenticatingUser from "../middlewares/authUser.js";
 import commonPostRouter from "../routes/commonPostRoutes.js";
 import cors from "cors";
+import serverless from "serverless-http"
 const app = express();
+
+connectDB()
 
 const corsOptions = {
   origin: "https://blog-web-app-nzot.vercel.app", // Replace with your frontend's origin
@@ -27,8 +30,11 @@ app.get('/',(req,res) => {
 app.use("/api/user", userRouter);
 app.use("/api/post", authenticatingUser, authenticatedPostRoutes);
 app.use("/api/posts", commonPostRouter);
+
 // Server + DB setup
-app.listen(5000, async () => {
-  await connectDB();
-  console.log("Server Started ...");
-});
+// app.listen(5000, async () => {
+//   await connectDB();
+//   console.log("Server Started ...");
+// });
+
+export const handler = serverless(app)
